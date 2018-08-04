@@ -1270,7 +1270,11 @@ static double table[32]={
 	else                        return 0.0;
 }
 
-- (float) rate:(int)aChan { return [self hitRate:aChan]; }
+- (float) rate:(int)aChan
+{
+    return [self hitRate:aChan];
+}
+
 - (BOOL) hitRateOverFlow:(unsigned short)aChan
 {
 	if(aChan<kNumV4FLTChannels)return hitRateOverFlow[aChan];
@@ -1983,6 +1987,9 @@ static const uint32_t SLTCommandReg      = 0xa80008 >> 2;
                             unsigned long aValue16              = aValue32 & 0xffff;
                             aValue32                            = aValue32 & 0x7fffff;
                             
+                            // add the hitRate to the eventCounter for display in the KATRIN object
+                            eventCount[chan] += aValue32;
+                            
                             data[dataIndex + 5]                 = ((chan&0xff)<<20) | ((overflow&0x1)<<16) | aValue16;    // The 16 bit values
                             data[5 + dataIndex + countHREnabledChans] =  aValue32 * freq;                                 // The 32 bit values (new format);
                             
@@ -2492,14 +2499,15 @@ static const uint32_t SLTCommandReg      = 0xa80008 >> 2;
 }
 */
 
-
 - (BOOL) bumpRateFromDecodeStage:(short)channel
 {
-    if(channel>=0 && channel<kNumV4FLTChannels){
-		++eventCount[channel];
-	}
-    return YES;
+//    if(channel>=0 && channel<kNumV4FLTChannels){
+//        ++eventCount[channel];
+//    }
+//    return YES;
+    return NO; //Aug 4/2018 -- get the event count from the hit rate
 }
+
 - (BOOL) setFromDecodeStage:(short)aChan fifoFlags:(unsigned char)flags
 {
     if(!activateDebuggingDisplays)return NO;
@@ -2540,7 +2548,6 @@ static const uint32_t SLTCommandReg      = 0xa80008 >> 2;
 		[[NSNotificationCenter defaultCenter] postNotificationName:ORKatrinV4FLTModeFifoFlagsChanged object:self userInfo:userInfo];
     }    
 }
-
 
 - (unsigned long) eventCount:(int)aChannel
 {
