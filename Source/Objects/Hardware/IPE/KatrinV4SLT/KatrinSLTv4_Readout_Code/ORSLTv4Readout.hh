@@ -56,19 +56,19 @@ class ORSLTv4Readout : public ORVCard
     
    private:
     bool firstTime;
-    unsigned long long int nNoData; //< Number of loops where no data was read
+    //unsigned long long nNoData; //< Number of loops where no data was read
     
     struct timeval t0;
     struct timeval t1;
     uint32_t numWordsToRead; //< Number of word read in the last cycle
-    unsigned long long int nWords; //< Number of raw bytes recorded
-    unsigned long long int nLoops; //< Number of calls to the readout function
-    unsigned long long int nReadout; //< Number of calls with readout of data
-    unsigned long long int nReducedSize; //< Number of calls and readout of less than maximum block size
-    unsigned long long int nWaitingForReadout; //< Number of loops waiting for data
-    unsigned long long int nInhibit; //< Number of loops with inhibit active
-    unsigned long long int nNoReadout; //<  Number of loops without readout
-    unsigned long long int maxLoopsPerSec; //< Speed of the readout loop; used for analysis
+    unsigned long long nWords; //< Number of raw bytes recorded
+    unsigned long long nLoops; //< Number of calls to the readout function
+    unsigned long long nReadout; //< Number of calls with readout of data
+    unsigned long long nReducedSize; //< Number of calls and readout of less than maximum block size
+    unsigned long long nWaitingForReadout; //< Number of loops waiting for data
+    unsigned long long nInhibit; //< Number of loops with inhibit active
+    unsigned long long nNoReadout; //<  Number of loops without readout
+    unsigned long long maxLoopsPerSec; //< Speed of the readout loop; used for analysis
     
     bool activateFltReadout; //< Loop over Flts only trace and histogram mode
     
