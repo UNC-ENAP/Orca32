@@ -36,6 +36,13 @@
                 <outlet property="passWordField" destination="138" id="163"/>
                 <outlet property="passWordPanel" destination="135" id="143"/>
                 <outlet property="passwordButton" destination="125" id="130"/>
+                <outlet property="rocketChatAuthenticateField" destination="J6Y-LO-d5j" id="SjT-Ki-vkh"/>
+                <outlet property="rocketChatChannelField" destination="WZG-j7-Bj5" id="yAY-cu-9bk"/>
+                <outlet property="rocketChatLogoutField" destination="w4A-lg-TI9" id="dnW-Qm-mF1"/>
+                <outlet property="rocketChatPasswordField" destination="Pfg-uC-eFS" id="pvi-VT-f4B"/>
+                <outlet property="rocketChatPortField" destination="rUH-zp-ikJ" id="cBF-mq-1N3"/>
+                <outlet property="rocketChatURLField" destination="u9e-lg-ggG" id="boB-Sw-1oy"/>
+                <outlet property="rocketChatUserField" destination="XSf-9L-TEM" id="La0-G2-GIq"/>
                 <outlet property="scriptBackgroundColorWell" destination="240" id="241"/>
                 <outlet property="scriptCommentColorWell" destination="211" id="219"/>
                 <outlet property="scriptConstantsColorWell" destination="245" id="247"/>
@@ -45,6 +52,7 @@
                 <outlet property="sendBugReportButton" destination="189" id="196"/>
                 <outlet property="setPassWordField" destination="165" id="184"/>
                 <outlet property="setPassWordPanel" destination="164" id="183"/>
+                <outlet property="slackWebhookField" destination="kBD-M4-cto" id="6g9-4L-Niu"/>
                 <outlet property="window" destination="5" id="18"/>
             </connections>
         </customObject>
@@ -53,24 +61,33 @@
         <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="571" y="434" width="393" height="287"/>
+            <rect key="contentRect" x="571" y="434" width="393" height="310"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" misplaced="YES" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="287"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="310"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tabView focusRingType="none" misplaced="YES" controlSize="small" type="noTabsBezelBorder" id="23">
-                        <rect key="frame" x="-3" y="-4" width="399" height="293"/>
+                        <rect key="frame" x="-3" y="-4" width="399" height="316"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <tabViewItems>
                             <tabViewItem label="Start-up" identifier="Startup" id="25">
                                 <view key="view" id="27">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <matrix focusRingType="none" verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="30">
-                                            <rect key="frame" x="81" y="162" width="193" height="38"/>
+                                        <textField verticalHuggingPriority="750" id="95">
+                                            <rect key="frame" x="52" y="88" width="242" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="393">
+                                                <font key="font" metaFont="label"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix focusRingType="none" verticalHuggingPriority="750" misplaced="YES" allowsEmptySelection="NO" autosizesCells="NO" id="30">
+                                            <rect key="frame" x="85" y="170" width="193" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="193" height="18"/>
@@ -95,8 +112,8 @@
                                                 <action selector="openingDocPrefAction:" target="-2" id="50"/>
                                             </connections>
                                         </matrix>
-                                        <textField verticalHuggingPriority="750" id="33">
-                                            <rect key="frame" x="32" y="209" width="282" height="14"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="33">
+                                            <rect key="frame" x="36" y="217" width="282" height="14"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="When starting Orca always:" id="392">
                                                 <font key="font" metaFont="smallSystemBold"/>
@@ -104,33 +121,24 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <box verticalHuggingPriority="750" boxType="separator" id="40">
-                                            <rect key="frame" x="82" y="202" width="191" height="5"/>
+                                        <box verticalHuggingPriority="750" misplaced="YES" boxType="separator" id="40">
+                                            <rect key="frame" x="86" y="210" width="191" height="5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </box>
-                                        <textField verticalHuggingPriority="750" id="95">
-                                            <rect key="frame" x="52" y="88" width="242" height="14"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="393">
-                                                <font key="font" metaFont="label"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <box verticalHuggingPriority="750" boxType="separator" id="99">
-                                            <rect key="frame" x="52" y="146" width="242" height="5"/>
+                                        <box verticalHuggingPriority="750" misplaced="YES" boxType="separator" id="99">
+                                            <rect key="frame" x="56" y="154" width="242" height="5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </box>
-                                        <box verticalHuggingPriority="750" boxType="separator" id="101">
-                                            <rect key="frame" x="52" y="143" width="242" height="5"/>
+                                        <box verticalHuggingPriority="750" misplaced="YES" boxType="separator" id="101">
+                                            <rect key="frame" x="56" y="151" width="242" height="5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </box>
-                                        <box verticalHuggingPriority="750" boxType="separator" id="104">
-                                            <rect key="frame" x="75" y="111" width="191" height="5"/>
+                                        <box verticalHuggingPriority="750" misplaced="YES" boxType="separator" id="104">
+                                            <rect key="frame" x="79" y="119" width="191" height="5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </box>
-                                        <matrix focusRingType="none" verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="106">
-                                            <rect key="frame" x="74" y="72" width="193" height="38"/>
+                                        <matrix focusRingType="none" verticalHuggingPriority="750" misplaced="YES" allowsEmptySelection="NO" autosizesCells="NO" id="106">
+                                            <rect key="frame" x="78" y="80" width="193" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="193" height="18"/>
@@ -155,8 +163,8 @@
                                                 <action selector="openingDialogAction:" target="-2" id="112"/>
                                             </connections>
                                         </matrix>
-                                        <textField verticalHuggingPriority="750" id="107">
-                                            <rect key="frame" x="25" y="118" width="282" height="14"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="107">
+                                            <rect key="frame" x="29" y="126" width="282" height="14"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="When opening an Object Dialog:" id="394">
                                                 <font key="font" metaFont="smallSystemBold"/>
@@ -164,8 +172,8 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="110">
-                                            <rect key="frame" x="70" y="52" width="219" height="13"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="110">
+                                            <rect key="frame" x="74" y="60" width="219" height="13"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Option-clicking will reverse this preference " id="395">
                                                 <font key="font" metaFont="label"/>
@@ -178,11 +186,11 @@
                             </tabViewItem>
                             <tabViewItem label="Appearance" identifier="Appearance" id="34">
                                 <view key="view" id="39">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box boxType="secondary" borderType="bezel" title="Connection Lines" id="56">
-                                            <rect key="frame" x="89" y="16" width="169" height="135"/>
+                                        <box misplaced="YES" boxType="secondary" borderType="bezel" title="Connection Lines" id="56">
+                                            <rect key="frame" x="105" y="37" width="169" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="9ad-lP-k2S">
                                                 <rect key="frame" x="3" y="3" width="163" height="118"/>
@@ -239,8 +247,8 @@
                                             </view>
                                             <font key="titleFont" metaFont="label"/>
                                         </box>
-                                        <box boxType="secondary" borderType="bezel" title="Configuration Background" id="58">
-                                            <rect key="frame" x="89" y="160" width="169" height="70"/>
+                                        <box misplaced="YES" boxType="secondary" borderType="bezel" title="Configuration Background" id="58">
+                                            <rect key="frame" x="105" y="181" width="169" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="MKW-iG-cCR">
                                                 <rect key="frame" x="3" y="3" width="163" height="53"/>
@@ -272,8 +280,8 @@
                             </tabViewItem>
                             <tabViewItem label="Security" identifier="PasswordLock" id="113">
                                 <view key="view" id="114">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <box boxType="secondary" borderType="bezel" title="Title" titlePosition="noTitle" id="126">
                                             <rect key="frame" x="86" y="101" width="200" height="102"/>
@@ -333,11 +341,11 @@
                             </tabViewItem>
                             <tabViewItem label="Bugs" identifier="Bugs" id="187">
                                 <view key="view" id="188">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button focusRingType="none" id="189">
-                                            <rect key="frame" x="75" y="237" width="104" height="18"/>
+                                            <rect key="frame" x="75" y="260" width="104" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Mail crash logs" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" focusRingType="none" inset="2" id="402">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -348,7 +356,7 @@
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" id="191">
-                                            <rect key="frame" x="52" y="204" width="20" height="13"/>
+                                            <rect key="frame" x="52" y="227" width="20" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="To:" id="403">
                                                 <font key="font" metaFont="label"/>
@@ -357,17 +365,17 @@
                                             </textFieldCell>
                                         </textField>
                                         <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="203">
-                                            <rect key="frame" x="78" y="77" width="213" height="140"/>
+                                            <rect key="frame" x="78" y="77" width="213" height="163"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" id="eqj-GN-G9L">
-                                                <rect key="frame" x="1" y="1" width="211" height="138"/>
+                                                <rect key="frame" x="1" y="1" width="211" height="161"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" usesFontPanel="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="204">
-                                                        <rect key="frame" x="0.0" y="0.0" width="211" height="138"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="211" height="161"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" red="0.96989965" green="1" blue="0.84383816" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <size key="minSize" width="211" height="138"/>
+                                                        <size key="minSize" width="211" height="161"/>
                                                         <size key="maxSize" width="213" height="10000000"/>
                                                         <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     </textView>
@@ -378,7 +386,7 @@
                                                 <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" controlSize="small" horizontal="NO" id="443">
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" controlSize="small" horizontal="NO" id="443">
                                                 <rect key="frame" x="-22" y="1" width="11" height="143"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
@@ -397,11 +405,11 @@
                             </tabViewItem>
                             <tabViewItem label="Editing" identifier="Editing" id="207">
                                 <view key="view" focusRingType="none" id="208">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box boxType="secondary" borderType="bezel" title="Script Syntax Coloring" id="209">
-                                            <rect key="frame" x="69" y="65" width="204" height="182"/>
+                                        <box misplaced="YES" boxType="secondary" borderType="bezel" title="Script Syntax Coloring" id="209">
+                                            <rect key="frame" x="70" y="79" width="204" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="2O2-uv-639">
                                                 <rect key="frame" x="3" y="3" width="198" height="165"/>
@@ -498,8 +506,8 @@
                                             </view>
                                             <font key="titleFont" metaFont="label"/>
                                         </box>
-                                        <box boxType="secondary" borderType="bezel" titlePosition="noTitle" id="230">
-                                            <rect key="frame" x="69" y="13" width="204" height="50"/>
+                                        <box misplaced="YES" boxType="secondary" borderType="bezel" titlePosition="noTitle" id="230">
+                                            <rect key="frame" x="70" y="27" width="204" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="ogS-4C-2il">
                                                 <rect key="frame" x="3" y="3" width="198" height="44"/>
@@ -531,11 +539,11 @@
                             </tabViewItem>
                             <tabViewItem label="Help" identifier="Help" id="301">
                                 <view key="view" id="302">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <matrix focusRingType="none" verticalHuggingPriority="750" allowsEmptySelection="NO" id="303">
-                                            <rect key="frame" x="57" y="182" width="140" height="38"/>
+                                        <matrix focusRingType="none" verticalHuggingPriority="750" misplaced="YES" allowsEmptySelection="NO" id="303">
+                                            <rect key="frame" x="55" y="145" width="140" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="140" height="18"/>
@@ -563,8 +571,8 @@
                                                 </column>
                                             </cells>
                                         </matrix>
-                                        <textField focusRingType="none" verticalHuggingPriority="750" id="307">
-                                            <rect key="frame" x="77" y="160" width="264" height="19"/>
+                                        <textField focusRingType="none" verticalHuggingPriority="750" misplaced="YES" id="307">
+                                            <rect key="frame" x="75" y="123" width="264" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" drawsBackground="YES" id="411">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -575,8 +583,8 @@
                                                 <action selector="helpFilePathAction:" target="-2" id="Rf2-uc-207"/>
                                             </connections>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="309">
-                                            <rect key="frame" x="54" y="228" width="256" height="17"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="309">
+                                            <rect key="frame" x="52" y="191" width="256" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Location of ORCA help files:" id="412">
                                                 <font key="font" metaFont="system"/>
@@ -584,8 +592,8 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="375">
-                                            <rect key="frame" x="74" y="135" width="184" height="17"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="375">
+                                            <rect key="frame" x="72" y="98" width="184" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Example: file:///Users/markhowe/Sites " id="413">
                                                 <font key="font" metaFont="miniSystem"/>
@@ -593,8 +601,8 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="379">
-                                            <rect key="frame" x="74" y="121" width="204" height="17"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="379">
+                                            <rect key="frame" x="72" y="84" width="204" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="mini" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Example: http://128.95.100.177/~markhowe" id="414">
                                                 <font key="font" metaFont="miniSystem"/>
@@ -607,11 +615,11 @@
                             </tabViewItem>
                             <tabViewItem label="Heartbeat" identifier="Heartbeat" id="445">
                                 <view key="view" id="446">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField verticalHuggingPriority="750" id="453">
-                                            <rect key="frame" x="102" y="192" width="240" height="14"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="453">
+                                            <rect key="frame" x="103" y="178" width="240" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" alignment="left" title="---" id="454">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -619,8 +627,8 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <button verticalHuggingPriority="750" id="451">
-                                            <rect key="frame" x="8" y="184" width="94" height="28"/>
+                                        <button verticalHuggingPriority="750" misplaced="YES" id="451">
+                                            <rect key="frame" x="9" y="170" width="94" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Select Folder" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="452">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -630,8 +638,8 @@
                                                 <action selector="selectHeartbeatPathAction:" target="-2" id="458"/>
                                             </connections>
                                         </button>
-                                        <button id="455">
-                                            <rect key="frame" x="11" y="152" width="138" height="18"/>
+                                        <button misplaced="YES" id="455">
+                                            <rect key="frame" x="12" y="138" width="138" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Post Heartbeat" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="456">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -641,8 +649,8 @@
                                                 <action selector="activateHeatbeatAction:" target="-2" id="459"/>
                                             </connections>
                                         </button>
-                                        <button id="464">
-                                            <rect key="frame" x="11" y="125" width="237" height="18"/>
+                                        <button misplaced="YES" id="464">
+                                            <rect key="frame" x="12" y="111" width="237" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Snapshot Status Log (every 15 minutes) " bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="465">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -652,8 +660,8 @@
                                                 <action selector="activatePostLogAction:" target="-2" id="467"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="468">
-                                            <rect key="frame" x="10" y="224" width="322" height="34"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="468">
+                                            <rect key="frame" x="11" y="210" width="322" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="You can have the status log and/or a heart beat periodically posted to a folder. " id="469">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -661,8 +669,8 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" id="470">
-                                            <rect key="frame" x="10" y="61" width="322" height="48"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="470">
+                                            <rect key="frame" x="11" y="47" width="322" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="471">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -676,11 +684,11 @@
                             </tabViewItem>
                             <tabViewItem label="Mail" identifier="Mail" id="wKe-HT-f07">
                                 <view key="view" id="abS-sB-zEi">
-                                    <rect key="frame" x="10" y="7" width="379" height="273"/>
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" misplaced="YES" id="V7E-gS-Ykv">
-                                            <rect key="frame" x="100" y="147" width="162" height="19"/>
+                                            <rect key="frame" x="102" y="158" width="162" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="h8M-Au-xTh">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -692,7 +700,7 @@
                                             </connections>
                                         </textField>
                                         <secureTextField verticalHuggingPriority="750" misplaced="YES" id="fBp-GT-EIf">
-                                            <rect key="frame" x="100" y="115" width="162" height="19"/>
+                                            <rect key="frame" x="102" y="126" width="162" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="Tpt-Xd-VMP">
                                                 <font key="font" metaFont="smallSystem"/>
@@ -706,8 +714,122 @@
                                                 <action selector="mailPasswordAction:" target="-2" id="uch-2C-kaf"/>
                                             </connections>
                                         </secureTextField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="aP8-es-cuI">
+                                            <rect key="frame" x="26" y="161" width="72" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Username:" id="2bw-5y-eec">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="l0M-Qn-maq">
+                                            <rect key="frame" x="102" y="190" width="162" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="WV9-hI-o1E">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="mailServerAction:" target="-2" id="mjf-QA-tgQ"/>
+                                            </connections>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="Knh-UZ-DaD">
+                                            <rect key="frame" x="12" y="193" width="86" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Server:" id="vS0-bx-4c5">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="C9e-ZT-wY8">
+                                            <rect key="frame" x="270" y="192" width="86" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="i.e. gmail.com" id="jvS-yJ-BDt">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="4b6-tu-viL">
+                                            <rect key="frame" x="283" y="97" width="61" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="(optional)" id="aLI-WQ-o5v">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="mdG-aw-8HG">
+                                            <rect key="frame" x="46" y="252" width="32" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Use:" id="1zs-jE-jAm">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="baf-YU-3Rg">
+                                            <rect key="frame" x="3" y="129" width="95" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="EMail Password:" id="m9u-BJ-5Vo">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="POW-tJ-awP">
+                                            <rect key="frame" x="18" y="97" width="80" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="From Address:" id="YDt-FY-ekA">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="2ap-2u-dPq">
+                                            <rect key="frame" x="11" y="215" width="157" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Credentials for Python Script" id="S4Q-uT-vBW">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="lad-Ow-a02">
+                                            <rect key="frame" x="41" y="52" width="308" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Note: If using gmail as the server, you must set the account to allow 'Less Secure' applications access" id="THU-r2-LSj">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" red="0.086604746861334389" green="0.22109068082330455" blue="0.85566298342541436" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="qlj-Xa-dEk">
+                                            <rect key="frame" x="102" y="94" width="162" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="uej-4z-nRe">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="mailFromAddressAction:" target="-2" id="CPM-dV-ehc"/>
+                                            </connections>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="fbA-3r-ViW">
+                                            <rect key="frame" x="41" y="16" width="308" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Note: if no from address is specified, the default is username@server from the options above" id="y6L-3A-4bT">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" red="0.086604746859999998" green="0.22109068079999999" blue="0.85566298340000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                         <matrix verticalHuggingPriority="750" misplaced="YES" allowsEmptySelection="NO" autosizesCells="NO" id="uxB-dL-EQA">
-                                            <rect key="frame" x="82" y="226" width="209" height="44"/>
+                                            <rect key="frame" x="102" y="237" width="209" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="209" height="22"/>
@@ -731,117 +853,194 @@
                                                 <action selector="mailSelectionAction:" target="-2" id="RpY-QJ-oJc"/>
                                             </connections>
                                         </matrix>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="aP8-es-cuI">
-                                            <rect key="frame" x="24" y="150" width="72" height="14"/>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Messaging" identifier="Messaging" id="Oth-sa-UiQ" userLabel="Messaging">
+                                <view key="view" id="mQp-3w-RPW">
+                                    <rect key="frame" x="10" y="7" width="379" height="296"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="AcV-f7-mjF">
+                                            <rect key="frame" x="11" y="267" width="317" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Username:" id="2bw-5y-eec">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Send On-Call Messages and Notification to Slack Webhook:" id="0l0-wc-2a3">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" misplaced="YES" id="l0M-Qn-maq">
-                                            <rect key="frame" x="100" y="179" width="162" height="19"/>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="kBD-M4-cto">
+                                            <rect key="frame" x="13" y="240" width="355" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="WV9-hI-o1E">
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="DJi-Pj-3Vy">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
-                                                <action selector="mailServerAction:" target="-2" id="mjf-QA-tgQ"/>
+                                                <action selector="slackWebhookAction:" target="-2" id="0xW-Io-CrY"/>
                                             </connections>
                                         </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="Knh-UZ-DaD">
-                                            <rect key="frame" x="10" y="182" width="86" height="14"/>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="ALR-WU-td0">
+                                            <rect key="frame" x="11" y="190" width="357" height="42"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Server:" id="vS0-bx-4c5">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="C9e-ZT-wY8">
-                                            <rect key="frame" x="268" y="181" width="86" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="i.e. gmail.com" id="jvS-yJ-BDt">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="4b6-tu-viL">
-                                            <rect key="frame" x="281" y="86" width="61" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="(optional)" id="aLI-WQ-o5v">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="mdG-aw-8HG">
-                                            <rect key="frame" x="44" y="241" width="32" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Use:" id="1zs-jE-jAm">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="baf-YU-3Rg">
-                                            <rect key="frame" x="1" y="118" width="95" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="EMail Password:" id="m9u-BJ-5Vo">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="POW-tJ-awP">
-                                            <rect key="frame" x="16" y="86" width="80" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="From Address:" id="YDt-FY-ekA">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="2ap-2u-dPq">
-                                            <rect key="frame" x="9" y="204" width="157" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Credentials for Python Script" id="S4Q-uT-vBW">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="lad-Ow-a02">
-                                            <rect key="frame" x="39" y="41" width="308" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Note: If using gmail as the server, you must set the account to allow 'Less Secure' applications access" id="THU-r2-LSj">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" red="0.086604746861334389" green="0.22109068082330455" blue="0.85566298342541436" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <textField verticalHuggingPriority="750" misplaced="YES" id="qlj-Xa-dEk">
-                                            <rect key="frame" x="100" y="83" width="162" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="uej-4z-nRe">
-                                                <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <action selector="mailFromAddressAction:" target="-2" id="CPM-dV-ehc"/>
-                                            </connections>
-                                        </textField>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="fbA-3r-ViW">
-                                            <rect key="frame" x="39" y="5" width="308" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Note: if no from address is specified, the default is username@server from the options above" id="y6L-3A-4bT">
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="Note: an app must be created in the Slack workspace and configured to allow incoming webhooks - copy the webhook url above" id="l87-BS-BDp">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" red="0.086604746859999998" green="0.22109068079999999" blue="0.85566298340000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="ZGc-At-3Fk">
+                                            <rect key="frame" x="11" y="152" width="298" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Send On-Call Messages and Notification to RocketChat:" id="gIb-jd-vJ3">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="XSf-9L-TEM">
+                                            <rect key="frame" x="13" y="68" width="162" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="NHm-Uw-MUv">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="rocketChatUserAction:" target="-2" id="OjZ-6r-ndI"/>
+                                            </connections>
+                                        </textField>
+                                        <secureTextField verticalHuggingPriority="750" misplaced="YES" id="Pfg-uC-eFS">
+                                            <rect key="frame" x="209" y="68" width="162" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="RW6-U7-MS2">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <allowedInputSourceLocales>
+                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                </allowedInputSourceLocales>
+                                            </secureTextFieldCell>
+                                            <connections>
+                                                <action selector="rocketChatPasswordAction:" target="-2" id="8N2-R4-Rbw"/>
+                                            </connections>
+                                        </secureTextField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="lhR-7i-X3e">
+                                            <rect key="frame" x="11" y="89" width="61" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username:" id="E7e-a1-Kik">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="WRd-Ha-vDg">
+                                            <rect key="frame" x="207" y="89" width="58" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password:" id="Das-2x-OHy">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" id="J6Y-LO-d5j">
+                                            <rect key="frame" x="8" y="30" width="93" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Authenticate" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Nog-mO-Kt0">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="rocketChatAuthenticateAction:" target="-2" id="XeR-g0-98y"/>
+                                            </connections>
+                                        </button>
+                                        <button verticalHuggingPriority="750" id="w4A-lg-TI9">
+                                            <rect key="frame" x="8" y="2" width="93" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="71W-Ha-zt2">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="rocketChatLogoutAction:" target="-2" id="PoU-5i-gyA"/>
+                                            </connections>
+                                        </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="mMB-GV-AzI">
+                                            <rect key="frame" x="102" y="3" width="277" height="57"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="Rq4-FE-z9c">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <string key="title">Note: authentication creates a temporary user ID  and authorization token with the REST API. Logging out invalidates the temporary keys.  The on-call object will attempt to re-authenticate if necessary.</string>
+                                                <color key="textColor" red="0.086604746859999998" green="0.22109068079999999" blue="0.85566298340000002" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <box verticalHuggingPriority="750" misplaced="YES" boxType="separator" id="jbJ-BD-HSK">
+                                            <rect key="frame" x="13" y="179" width="353" height="5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </box>
+                                        <textField verticalHuggingPriority="750" id="u9e-lg-ggG">
+                                            <rect key="frame" x="13" y="111" width="162" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="F0F-RP-00o">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="rocketChatURLAction:" target="-2" id="N3L-c5-fR9"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="rUH-zp-ikJ">
+                                            <rect key="frame" x="189" y="111" width="53" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="pw0-SD-8FJ">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="rocketChatPortAction:" target="-2" id="Dox-M1-QLu"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" id="WZG-j7-Bj5">
+                                            <rect key="frame" x="260" y="111" width="111" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Ci5-ej-7fG">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="rocketChatChannelAction:" target="-2" id="jfa-3B-BKE"/>
+                                            </connections>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="FX4-1Y-rLC">
+                                            <rect key="frame" x="11" y="130" width="131" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="RocketChat Server URL:" id="0fj-rt-xxG">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="kCG-OX-NKt">
+                                            <rect key="frame" x="187" y="130" width="30" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Port:" id="i4N-Ql-QAi">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" id="yQC-xv-q7l">
+                                            <rect key="frame" x="258" y="130" width="47" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Channel" id="JwU-Zj-BOG">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
@@ -855,7 +1054,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="17"/>
             </connections>
-            <point key="canvasLocation" x="716.5" y="767.5"/>
+            <point key="canvasLocation" x="527.5" y="-261"/>
         </window>
         <window title="Orca Security" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="135" userLabel="PasswordPanel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
