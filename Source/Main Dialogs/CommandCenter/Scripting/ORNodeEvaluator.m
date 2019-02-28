@@ -2146,13 +2146,14 @@
                 case '>':				line = [NSMutableString stringWithString:@"[>]"];			break;
                 case kCaseRange:        line = [NSMutableString stringWithString:@"[<=<]"];         break;
                 case kCaseRange1:       line = [NSMutableString stringWithString:@"[<<]"];         break;
+                case kCaseRange2:       line = [NSMutableString stringWithString:@"[>>]"];         break;
                 case kCaseGtE:          line = [NSMutableString stringWithString:@"[>=]"];         break;
                 case kCaseLtE:          line = [NSMutableString stringWithString:@"[<=]"];         break;
                 case kCaseGt:           line = [NSMutableString stringWithString:@"[>]"];         break;
                 case kCaseLt:           line = [NSMutableString stringWithString:@"[<]"];         break;
 
                 case LEFT_OP:           line = [NSMutableString stringWithString:@"[<<]"];          break;
-                case RIGHT_OP:			line = [NSMutableString stringWithString:@"[<<]"];			break;
+                case RIGHT_OP:			line = [NSMutableString stringWithString:@"[>>]"];			break;
 				case AND_OP:			line = [NSMutableString stringWithString:@"[&&]"];			break;
 				case '&':				line = [NSMutableString stringWithString:@"[&]"];			break;
 				case OR_OP:				line = [NSMutableString stringWithString:@"[||]"];			break;
