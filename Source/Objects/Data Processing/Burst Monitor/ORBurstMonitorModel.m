@@ -1420,6 +1420,48 @@ static NSString* ORBurstMonitorMinimumEnergyAllowed  = @"ORBurstMonitor Minimum 
         //pingstring =[[NSString alloc] initWithData:pingdata encoding:NSUTF8StringEncoding];
         //NSLog(@"pingstring is %@ \n", pingstring);
     }
+    if(novaState == 2)
+    {
+        NSLog(@"Low-threshold candidate, send ping if SNEWS run\n");
+        //make the time into a sendable string
+        NSDate* burstdate = [NSDate dateWithTimeIntervalSince1970:numSecTillBurst];
+        NSCalendar* cal = [NSCalendar currentCalendar];
+        [cal setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+        NSDateComponents* burstcomp = [cal components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:burstdate];
+        NSInteger century = ([burstcomp year]/100);
+        NSInteger yy = [burstcomp year] - (100*century);
+        NSInteger mmo = 100*[burstcomp month];
+        NSInteger dd = 10000*[burstcomp day];
+        NSInteger hh = 10000*[burstcomp hour];
+        NSInteger mmi = 100*[burstcomp minute];
+        NSInteger ss = [burstcomp second];
+        NSInteger dateint = yy + mmo + dd;
+        NSInteger timeint = ss + mmi + hh;
+        NSString* burstcommand = @"";
+        NSInteger level = 1; //Good alarm, auto.  0=test 1=possible 2=good 3=confirmed -1=retraction
+        NSInteger signif = (multInBurst*0.5)+3; //cbmod current background and best (round) fit with likelyhood as of dec 2016 with logaritmic rounding
+        burstcommand = [burstcommand stringByAppendingFormat:@"cd snews/testServer/ ; ./ctestgcli %i %i 0 %i %i 9", dateint, timeint, level, signif];  //maybe add nanoseconds? 9 is halo
+        NSLog(@"burstcommand with a space on each side: | %@ |\n", burstcommand);
+        NSTask* Cping;
+        Cping =[[NSTask alloc] init];
+        
+        NSLog(@"end1\n");
+        if(1-[[runbits objectAtIndex:6] intValue])  //Send to local machine  //mod change to ping again
+        {
+            NSLog(@"No pulse sent to snews because run type is not 'SNEWS'\n");
+            NSLog(@"Parameters (d,t,l,s) were %i %i %i %i\n", dateint, timeint, level, signif);
+            [Cping setLaunchPath: @"/usr/bin/printf"];
+            [Cping setArguments: [NSArray arrayWithObjects: @"test string one\n", nil]];
+        }
+        else{ //Send to halo shift
+            NSLog(@"Pulse sent to SNEWS Test Server\n");
+            [Cping setLaunchPath: @"/usr/bin/ssh"];  //@"/usr/bin/ssh"
+            [Cping setArguments: [NSArray arrayWithObjects: @"halo@142.51.71.223", burstcommand, nil]];  //.223 only for ug
+        }  // -c successfully made directories in home
+        NSLog(@"end2\n");
+        [Cping launch]; //Send the ping!
+        NSLog(@"end3\n");
+    }
     if(countsInBurst < 20)
     {
         exChan = 64.0*(1.0-exp(-(countsInBurst/64.0)));
