@@ -1420,7 +1420,7 @@ static NSString* ORBurstMonitorMinimumEnergyAllowed  = @"ORBurstMonitor Minimum 
         //pingstring =[[NSString alloc] initWithData:pingdata encoding:NSUTF8StringEncoding];
         //NSLog(@"pingstring is %@ \n", pingstring);
     }
-    if(novaState == 2)
+    if(novaState == 1) // burst type: coincidence
     {
         NSLog(@"Low-threshold candidate, send ping if SNEWS run\n");
         //make the time into a sendable string
