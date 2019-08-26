@@ -536,6 +536,10 @@ NSString* ORFlashCamModelRunEnded              = @"ORFlashCamModelRunEnded";
         [args addObjectsFromArray:@[@"-sd",     [NSString stringWithFormat:@"%i", [self signalDepth]]]];
         [args addObjectsFromArray:@[@"-bl",     [NSString stringWithFormat:@"%i", [self baselineOffset]]]];
         [args addObjectsFromArray:@[@"-blbias", [NSString stringWithFormat:@"%i", [self baselineBias]]]];
+        [args addObjectsFromArray:@[@"-athr",   [NSString stringWithFormat:@"%i", 65000]]];
+        [args addObjectsFromArray:@[@"-gpz",    [NSString stringWithFormat:@"%i", 100000]]];
+        [args addObjectsFromArray:@[@"-gs",     [NSString stringWithFormat:@"%i", 6000]]];
+        
         for(int i=0; i<kMaxFlashCamChannels; i++){
             if(!chanEnabled[i]) continue;
             [args addObjectsFromArray:@[@"-athr", [NSString stringWithFormat:@"%i,%i,1", threshold[i], i]]];
