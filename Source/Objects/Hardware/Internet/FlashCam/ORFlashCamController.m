@@ -180,7 +180,6 @@
 
 - (void) traceTypeChanged:(NSNotification *)note
 {
-    NSLog([NSString stringWithFormat:@"%i\n", [model traceType]]);
     [traceTypeButton selectItemWithTag:[model traceType]];
 }
 
