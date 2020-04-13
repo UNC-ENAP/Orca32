@@ -46,6 +46,7 @@ NSString* computerName();
 NSString* appPath();
 NSString* launchPath();
 NSString* fullVersion();
+NSString* gitRevHash();
 
 //alert panels for 10.10 and before
 BOOL ORRunAlertPanel(NSString* mainMessage, NSString* informativeMessage, NSString* defaultButtonTitle, NSString* alternateButtonTitle, NSString* otherButtonTitle, ...);
