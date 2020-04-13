@@ -7300,7 +7300,7 @@
 		F576B08203B12320015F64B1 /* ORShaperController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ORShaperController.m; sourceTree = "<group>"; };
 		F576B08303B12320015F64B1 /* ShaperCard.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ShaperCard.gif; sourceTree = "<group>"; };
 		F576B09403B154A7015F64B1 /* Shaper.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Shaper.nib; path = Source/Objects/Hardware/Vme/Shaper/Shaper.nib; sourceTree = SOURCE_ROOT; };
-		F5AD34B203A7AEB8015F64B1 /* Readme */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Readme; sourceTree = SOURCE_ROOT; };
+		F5AD34B203A7AEB8015F64B1 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = SOURCE_ROOT; };
 		F5B1802503B297FD015F64B1 /* ORCaenDataDecoder.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ORCaenDataDecoder.h; sourceTree = "<group>"; };
 		F5B1802603B297FD015F64B1 /* ORCaenDataDecoder.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ORCaenDataDecoder.m; sourceTree = "<group>"; };
 		F5B1802903B297FD015F64B1 /* Caen775.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Caen775.nib; sourceTree = "<group>"; };
@@ -7536,7 +7536,7 @@
 			children = (
 				846574BF1F9D449500B4BAA9 /* Orca.entitlements */,
 				CE68866C0D0CE0E400FA4158 /* PlugIns */,
-				F5AD34B203A7AEB8015F64B1 /* Readme */,
+				F5AD34B203A7AEB8015F64B1 /* Readme.md */,
 				F51E693F03AE4775015F64B1 /* Source */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				84F7FB520AE5558900A5AA4C /* Libraries */,
@@ -17576,7 +17576,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -x \"/usr/bin/svnversion\" ]; then\n   svnver=`/usr/bin/svnversion .`\nelse\n   svnver=\"-\"\nfi\n\nif [ \"$svnver\" == \"Unversioned directory\" ]; then\n   if [ -x \"/usr/bin/git\" ]; then\n      svnver=`/usr/bin/git -C $SOURCE_ROOT svn info | grep '^Revision: ' | cut -c 11-`\n   fi\nfi\n\necho \"$svnver\" > $TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Resources/svnversion\n";
+			shellScript = "# set the code version from svn or git\n# if using git, set the bundle version to the git tag\nversion=\"-\"\nif [ -d \".svn\" ]; then\n    if [ -x \"/usr/bin/svnversion\" ]; then\n        version=`/usr/bin/svnversion .`\n        if [ \"$version\" == \"Unversioned directory\" ]; then\n            version=\"-\"\n        fi\n    fi\nfi\nif [ -d \".git\" ]; then\n    if [ -x \"/usr/bin/git\" ]; then\n        version=`/usr/bin/git rev-list HEAD --count`\n        if [\"$version\" == \"fatal: not a git repository (or any of the parent directories): .git\" ]; then\n            version=\"-\"\n        fi\n        gitrev=`/usr/bin/git rev-parse HEAD`\n        echo \"$gitrev\" > $TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Resources/gitrevhash\n        release=`/usr/bin/git describe --tags --always --abbrev=0`\n        target_plist=\"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"\n        dsym_plist=\"$DWARF_DSYM_FOLDER_PATH/$DWARF_DSYM_FILE_NAME/Contents/Info.plist\"\n        for plist in \"$target_plist\" \"$dsym_plist\"; do\n            if [ -f \"$plist\" ]; then\n                /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $release\" \"$plist\"\n            fi\n        done\n    fi\nfi\necho \"$version\" > $TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Resources/orcaversion";
 		};
 /* End PBXShellScriptBuildPhase section */
 
