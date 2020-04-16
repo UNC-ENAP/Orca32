@@ -2014,7 +2014,6 @@
 		848822A61D2413910030B398 /* ORDT5725Decoders.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488229E1D2413910030B398 /* ORDT5725Decoders.m */; };
 		848822A71D2413910030B398 /* ORDT5725Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 8488229F1D2413910030B398 /* ORDT5725Model.h */; };
 		848822A81D2413910030B398 /* ORDT5725Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 848822A01D2413910030B398 /* ORDT5725Model.m */; };
-		848883CC10179CBA0043E7D6 /* EduWashingtonNplOrcaNi488PlugIn.plugin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84888394101796C10043E7D6 /* EduWashingtonNplOrcaNi488PlugIn.plugin */; };
 		848917781D6B73D300CF5AAF /* CytecVM8.gif in Resources */ = {isa = PBXBuildFile; fileRef = 848917721D6B73D300CF5AAF /* CytecVM8.gif */; };
 		848917791D6B73D300CF5AAF /* CytecVM8.nib in Resources */ = {isa = PBXBuildFile; fileRef = 848917731D6B73D300CF5AAF /* CytecVM8.nib */; };
 		8489177A1D6B73D300CF5AAF /* ORCytecVM8Controller.h in Headers */ = {isa = PBXBuildFile; fileRef = 848917741D6B73D300CF5AAF /* ORCytecVM8Controller.h */; };
@@ -3828,7 +3827,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				848883CC10179CBA0043E7D6 /* EduWashingtonNplOrcaNi488PlugIn.plugin in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5608,7 +5606,6 @@
 		8488229E1D2413910030B398 /* ORDT5725Decoders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDT5725Decoders.m; sourceTree = "<group>"; };
 		8488229F1D2413910030B398 /* ORDT5725Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORDT5725Model.h; sourceTree = "<group>"; };
 		848822A01D2413910030B398 /* ORDT5725Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORDT5725Model.m; sourceTree = "<group>"; };
-		84888394101796C10043E7D6 /* EduWashingtonNplOrcaNi488PlugIn.plugin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EduWashingtonNplOrcaNi488PlugIn.plugin; path = PlugIns/Universal/EduWashingtonNplOrcaNi488PlugIn.plugin; sourceTree = SOURCE_ROOT; };
 		848917721D6B73D300CF5AAF /* CytecVM8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CytecVM8.gif; sourceTree = "<group>"; };
 		848917731D6B73D300CF5AAF /* CytecVM8.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = CytecVM8.nib; sourceTree = "<group>"; };
 		848917741D6B73D300CF5AAF /* ORCytecVM8Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORCytecVM8Controller.h; sourceTree = "<group>"; };
@@ -7535,7 +7532,6 @@
 			isa = PBXGroup;
 			children = (
 				846574BF1F9D449500B4BAA9 /* Orca.entitlements */,
-				CE68866C0D0CE0E400FA4158 /* PlugIns */,
 				F5AD34B203A7AEB8015F64B1 /* Readme.md */,
 				F51E693F03AE4775015F64B1 /* Source */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
@@ -14618,14 +14614,6 @@
 				CE0216BB1512139A00456EB7 /* ORnEDMCoilModel.m */,
 			);
 			path = nEDMCoil;
-			sourceTree = "<group>";
-		};
-		CE68866C0D0CE0E400FA4158 /* PlugIns */ = {
-			isa = PBXGroup;
-			children = (
-				84888394101796C10043E7D6 /* EduWashingtonNplOrcaNi488PlugIn.plugin */,
-			);
-			name = PlugIns;
 			sourceTree = "<group>";
 		};
 		CE7328A81466EEDC00A50AE9 /* HardwareFinder */ = {
